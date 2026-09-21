@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Mi Persona Favorita 💛</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body>
+
+    <!-- REPRODUCTOR DE AUDIO DE RESPALDO -->
+    <iframe id="musica" width="1" height="1" src="https://youtube.com" frameborder="0" allow="autoplay" style="display:none;"></iframe>
+
+    <div id="app-container">
+
+        <!-- PANTALLA 1: EL SOBRE INICIAL -->
+        <section id="pantalla-1" class="screen active">
+            <div class="sobre-card animated-up">
+                <div class="icono-sobre">✉️💛</div>
+                <h2>Te ha llegado un mensaje especial...</h2>
+                <p>Presiona el botón para abrirlo</p>
+                <button class="btn btn-principal pulsar" onclick="irAPantalla(2)">Abrir Regalo</button>
+            </div>
+        </section>
+
+        <!-- PANTALLA 2: EL CANDADO INTERACTIVO (CONTRASEÑA: Peque) -->
+        <section id="pantalla-2" class="screen">
+            <div class="lock-card">
+                <div class="candado-icono">🔒</div>
+                <h2>Código de Acceso</h2>
+                <p>Introduce tu apodo para desbloquear tu sorpresa... 🤫</p>
+                <div class="pin-container">
+                    <!-- Tipo text normal para que abra el teclado de letras en su cel -->
+                    <input type="text" id="pin-input" placeholder="Escribe aquí..." autocomplete="off">
+                </div>
+                <button class="btn btn-principal" onclick="verificarPin()">Desbloquear</button>
+                <p id="error-msg" class="error-hidden">Código incorrecto. Inténtalo de nuevo, mi amor. 💕</p>
+            </div>
+        </section>
+
+
+        <!-- PANTALLA 3: EL MINIJUEGO DEL BOTÓN -->
+        <section id="pantalla-3" class="screen">
+            <main class="game-card">
+                <h1 class="titulo-juego">Una pregunta seria... 🤔</h1>
+                <p class="texto-juego">¿Me dejas ser la persona encargada de llenarte de flores amarillas y hacerte sonreír hoy y siempre?</p>
+                <div class="contenedor-botones">
+                    <button id="btn-si" class="btn btn-principal">¡SÍ! 💛</button>
+                    <button id="btn-no" class="btn btn-peligro">No 😢</button>
+                </div>
+            </main>
+        </section>
+
+        <!-- PANTALLA 4: EL RENDER FINAL DEL JARDÍN -->
+        <section id="pantalla-4" class="screen">
+            <canvas id="jardin-canvas"></canvas>
+            <div class="interfaz-final">
+                <h1 class="titulo-principal animate-glow">Feliz día de las Flores Amarillas</h1>
+                <div class="carta-amor panel-fade-up">
+                    <p>Quizás no pueda darte un jardín entero de verdad justo en este segundo, pero quería armarte algo único con mi propio código.</p>
+                    <p>Eres la persona más especial de mi vida y te mereces todas las flores amarillas del universo hoy y siempre.</p>
+                    <span class="firma">Te amo muchísimo ❤️</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
